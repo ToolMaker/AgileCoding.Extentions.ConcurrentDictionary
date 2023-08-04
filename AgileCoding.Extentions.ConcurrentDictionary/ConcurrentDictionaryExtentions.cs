@@ -8,6 +8,7 @@
     {
         public static Dictionary<TKeyType, TValueType2> ToDictionary<TKeyType, TValueType1, TValueType2>
             (this ConcurrentDictionary<TKeyType, TValueType1> self, Func<KeyValuePair<TKeyType, TValueType1>, KeyValuePair<TKeyType, TValueType2>> mapperFunction)
+        where TKeyType : notnull
         {
             Dictionary<TKeyType, TValueType2> resultDictionary = new Dictionary<TKeyType, TValueType2>();
             foreach (KeyValuePair<TKeyType, TValueType1> item in self)
